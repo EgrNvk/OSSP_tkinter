@@ -9,27 +9,27 @@ class VolumeView:
 
         self.root.title("Конвертер об'єму")
         self.root.geometry("500x400")
-        self.root.configure(bg="gray")
+        self.root.configure(bg="light gray")
 
-        tk.Label(self.root, text="Конвертер об'єму", font=("Arial", 16, "bold"), bg="black").pack(pady=10)
+        tk.Label(self.root, text="Конвертер об'єму", font=("Arial", 20, "bold"), bg="light gray").pack(pady=10)
 
-        tk.Label(self.root, text="Введіть число:", bg="gray").pack()
+        tk.Label(self.root, text="Введіть число:", font=("Arial", 16, "bold"), bg="light gray").pack()
         self.value_entry=tk.Entry(self.root, width=15, justify="center")
         self.value_entry.pack(pady=3)
 
-        tk.Label(self.root, text="Звідки:", bg="gray").pack()
+        tk.Label(self.root, text="Звідки:", font=("Arial", 16, "bold"), bg="light gray").pack()
         self.from_var=tk.StringVar(self.root)
-        self.from_var=set(units[0])
+        self.from_var.set(units[0])
         tk.OptionMenu(self.root, self.from_var, *units).pack(pady=3)
 
-        tk.Label(self.root, text="Куди:", bg="gray").pack()
+        tk.Label(self.root, text="Куди:", font=("Arial", 16, "bold"), bg="light gray").pack()
         self.to_var = tk.StringVar(self.root)
-        self.to_var = set(units[1])
+        self.to_var.set(units[1])
         tk.OptionMenu(self.root, self.to_var, *units).pack(pady=3)
 
         tk.Button(self.root, text="Конвертувати", bg="blue", fg="white", font=("Arial", 10, "bold"), command=self.on_convert).pack(pady=10)
 
-        self.result_label=tk.Label(self.root, text="", font=("Arial", 12, "bold"), bg="black")
+        self.result_label=tk.Label(self.root, text="", font=("Arial", 12, "bold"), bg="light gray")
         self.result_label.pack(pady=5)
 
     def on_convert(self):
